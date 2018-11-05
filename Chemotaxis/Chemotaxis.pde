@@ -21,6 +21,7 @@
   }
  	//move and show the bacteria   
  }  
+ 
  class Bacteria    
  {     
    int x_pos, y_pos, r, g, b;
@@ -40,9 +41,13 @@
      popMatrix();
    }
    void move() {
-     x_pos = x_pos + (int)(Math.random()*20-10);
-     y_pos = y_pos + (int)(Math.random()*20-10);
-   
+     if (!mousePressed){
+       x_pos = x_pos -(int)(Math.random()*30-15); 
+       y_pos = y_pos -(int)(Math.random()*30-15);
+     } else {
+       x_pos = mouseX -(int)(Math.random()*50-25); 
+       y_pos = mouseY -(int)(Math.random()*50-25);
+     }
    }
  	//lots of java!   
  }    
